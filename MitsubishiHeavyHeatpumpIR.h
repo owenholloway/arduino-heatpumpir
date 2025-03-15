@@ -57,6 +57,14 @@
 #define MITSUBISHI_HEAVY_ZMP_HIPOWER        0x20 
 #define MITSUBISHI_HEAVY_ZMP_ECONO          0x00
 
+#define MITSUBISHI_HEAVY_ZSA_W_FAN_AUTO     0x0F // Fan speed
+#define MITSUBISHI_HEAVY_ZSA_W_FAN1         0x0E
+#define MITSUBISHI_HEAVY_ZSA_W_FAN2         0x0D
+#define MITSUBISHI_HEAVY_ZSA_W_FAN3         0x0C
+#define MITSUBISHI_HEAVY_ZSA_W_FAN4         0x0B
+#define MITSUBISHI_HEAVY_ZSA_W_HIPOWER      0x07 
+#define MITSUBISHI_HEAVY_ZSA_W_ECONO        0x09
+
 #define MITSUBISHI_HEAVY_CLEAN_ON          0x00
 #define MITSUBISHI_HEAVY_ZMP_CLEAN_ON      0xDF
 #define MITSUBISHI_HEAVY_ZJ_CLEAN_OFF      0x20
@@ -145,6 +153,7 @@
 #define MITSUBISHIHEAVY_ZM 1
 #define MITSUBISHIHEAVY_ZMP 2
 #define MITSUBISHIHEAVY_ZEA 3
+#define MITSUBISHIHEAVY_ZSA_W 4
 
 
 class MitsubishiHeavyHeatpumpIR : public HeatpumpIR
@@ -182,6 +191,16 @@ class MitsubishiHeavyZMPHeatpumpIR : public MitsubishiHeavyHeatpumpIR
 {
   public:
     MitsubishiHeavyZMPHeatpumpIR();
+    void send(IRSender& IR, uint8_t powerModeCmd, uint8_t operatingModeCmd, uint8_t fanSpeedCmd, uint8_t temperatureCmd, uint8_t swingVCmd, uint8_t swingHCmd, bool cleanModeCmd, bool silentModeCmd, bool _3DAutoCmd);
+
+  private:
+    void sendMitsubishiHeavy(IRSender& IR, uint8_t powerMode, uint8_t operatingMode, uint8_t fanSpeed, uint8_t temperature, uint8_t swingV, uint8_t swingH, uint8_t cleanMode);
+};
+
+class MitsubishiHeavyZSAWHeatpumpIR : public MitsubishiHeavyHeatpumpIR
+{
+  public:
+    MitsubishiHeavyZSAWHeatpumpIR();
     void send(IRSender& IR, uint8_t powerModeCmd, uint8_t operatingModeCmd, uint8_t fanSpeedCmd, uint8_t temperatureCmd, uint8_t swingVCmd, uint8_t swingHCmd, bool cleanModeCmd, bool silentModeCmd, bool _3DAutoCmd);
 
   private:
