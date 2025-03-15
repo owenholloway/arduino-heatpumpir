@@ -21,6 +21,7 @@ An Arduino library to control pump/split unit air conditioner. Currently support
 * Midea MSR1-12HRN1-QC2 + MOA1-12HN1-QC2, sold as Ultimate Pro Plus Basic 13FP in Finland (Midea remote control P/N RG51M1/E)
    * Also other Midea models sold as 'Ultimate', even some inverter models
    * Also Onnline (sold through Onninen) has been reported to work
+* Mitsubishi Heavy DXKxxZSA-W (Remote control P/N RLA502A700L)
 * Mitsubishi Heavy SRKxxZJ-S (Remote control P/N RKX502A001C)
 * Mitsubishi Heavy SRKxxZM-S (Remote Control P/N RLA502A700B)
 * Mitsubishi Heavy SRKxxZMP-S (Remote Control P/N RKX502A001P)
