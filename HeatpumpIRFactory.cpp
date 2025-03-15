@@ -57,6 +57,8 @@ HeatpumpIR* HeatpumpIRFactory::create(const char *modelName) {
     return new MitsubishiHeavyZJHeatpumpIR();
   } else if (strcmp_P(modelName, PSTR("mitsubishi_heavy_zm")) == 0) {
     return new MitsubishiHeavyZMHeatpumpIR();
+  } else if (strcmp_P(modelName, PSTR("mitsubishi_heavy_zsa_w")) == 0) {
+    return new MitsubishiHeavyZSAWHeatpumpIR();
   } else if (strcmp_P(modelName, PSTR("mitsubishi_kj")) == 0) {
     return new MitsubishiKJHeatpumpIR();
   } else if (strcmp_P(modelName, PSTR("mitsubishi_msc")) == 0) {
